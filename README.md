@@ -1,12 +1,12 @@
 # OAuth Example
 
-Prerequisites:
+Quick start:
 
 ```
-brew install yarn
+npm i
+npm run build
+npm run start
 ```
-
-
 
 ## Authorization Flow
 

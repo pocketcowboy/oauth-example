@@ -4,6 +4,8 @@
     "packages/*"
   ],
   "scripts": {
+    "clean": "ultra -r clean",
+    "build": "ultra -r build",
     "start": "ultra -r start"
   },
   "name": "oauth-example",

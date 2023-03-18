@@ -6,12 +6,21 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "clean": "rm -rf dist",
+    "build": "yarn build:bundle && yarn build:copy",
+    "build:copy": "mkdir -p dist && cp -R public/ dist",
+    "build:bundle": "esbuild app.jsx --jsx-import-source=preact --jsx=automatic --bundle --minify --sourcemap --outdir=dist --allow-overwrite",
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
     "chalk": "^5.2.0",
     "common": "*",
-    "express": "^4.18.2"
+    "esbuild": "^0.17.12",
+    "express": "^4.18.2",
+    "preact": "^10.13.1"
+  },
+  "devDependencies": {
+    "esbuild": "^0.17.12"
   }
 }

@@ -1,0 +1,30 @@
+@import "reset.css";
+
+.button-color { color: #0554F2; }
+.auth-server-color { color: #296CF2; }
+.app-color { color: #F2B544; }
+.another-app-color { color: #91A9D9; }
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 10rem;
+}
+
+.auth-server header {
+    color: #fff;
+    background-color: #296CF2;
+}
+
+.app header {
+    background-color: #F2B544;
+}
+
+.another-app header {
+    background-color: #91A9D9;
+}

@@ -1,9 +1,10 @@
 import express from "express";
 import chalk from "chalk";
 
-import { APP_PORT } from "common";
-
 var app = express();
-app.listen(APP_PORT, () =>
-  console.log(`Started ${chalk.yellow("app")} on port ${APP_PORT}`)
+app.use(express.static("dist"));
+
+const port = process.env.PORT || 8080;
+app.listen(port, () =>
+  console.log(`Started ${chalk.yellow("app")} on port ${port}`)
 );
