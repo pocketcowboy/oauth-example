@@ -1,4 +1,4 @@
-import "./style.css";
+import "../style.css";
 
 export const AuthButton = ({ to, children }) => (
   <a href={to} className="button auth-button">

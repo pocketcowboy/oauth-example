@@ -1,6 +1,6 @@
 import { useState } from "preact/hooks";
 
-import "./style.css";
+import "../style.css";
 
 export const LoginForm = ({ onSubmit }) => {
   const [username, setUsername] = useState("");

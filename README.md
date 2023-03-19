@@ -27,3 +27,12 @@ sequenceDiagram
     Protected Datastore->>Authorization Server: Verify access token
     Protected Datastore->>App: Return protected data
 ```
+
+### What this flow doesn't cover
+
+How the OAuth client (App):
+
+- Is known to the Authorization Server
+- Knows about the protected resource (Datastore)
+
+These details fall outside the scope of the OAuth protocol. This example uses shared configuration values in the `common` package.

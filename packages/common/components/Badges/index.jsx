@@ -1,4 +1,4 @@
-import "./style.css";
+import "../style.css";
 
 export const UnknownUserBadge = () => (
   <header className="user-badge unknown-user-badge" />

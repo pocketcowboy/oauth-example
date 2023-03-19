@@ -18,7 +18,8 @@
     "common": "*",
     "esbuild": "^0.17.12",
     "express": "^4.18.2",
-    "preact": "^10.13.1"
+    "preact": "^10.13.1",
+    "query-string": "^8.1.0"
   },
   "devDependencies": {
     "esbuild": "^0.17.12"
