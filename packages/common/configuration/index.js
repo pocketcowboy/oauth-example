@@ -16,10 +16,16 @@ export const SharedConfiguration = {
   protected_datastore_endpoint: `http://localhost:${protected_datastore_port}/data`,
 };
 
-// For the purposes of demonstration, we use Base64 encoding to encrypt and verify secrets
+// For the purposes of demonstration, we use Base64 encoding to encrypt and decrypt secrets
 const encode = btoa;
 const decode = atob;
 
 export const Secrets = {
-  app_client_secret: encode(SharedConfiguration.app_client_id),
+  app: {
+    client_secret: encode(SharedConfiguration.app_client_id),
+  },
+  user: {
+    username: "cookie.monster",
+    password: "cookies",
+  },
 };

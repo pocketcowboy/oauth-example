@@ -25,9 +25,25 @@ export const LoginForm = ({ onSubmit }) => {
         value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
-      <button type="submit" className="button">
+      <button type="submit" className="button auth-button">
         Login
       </button>
     </form>
   );
 };
+
+export const AuthorizationForm = ({
+  endpoint,
+  request: { response_type, client_id, redirect_uri },
+  children,
+}) => (
+  <form action={endpoint} method="post">
+    <input type="hidden" name="response_type" value={response_type} />
+    <input type="hidden" name="client_id" value={client_id} />
+    <input type="hidden" name="redirect_uri" value={redirect_uri} />
+    {children}
+    <button type="submit" className="button approve-button">
+      Approve
+    </button>
+  </form>
+);

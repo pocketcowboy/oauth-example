@@ -5,7 +5,7 @@ Quick start:
 ```
 npm i
 npm run build
-npm run start
+npm start
 ```
 
 ## Authorization Flow

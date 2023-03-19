@@ -11,13 +11,18 @@
     "build:copy": "mkdir -p dist && cp -R public/ dist",
     "build:bundle": "esbuild app.jsx --jsx-import-source=preact --jsx=automatic --bundle --minify --sourcemap --outdir=dist --allow-overwrite",
     "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "dependencies": {
     "chalk": "^5.2.0",
     "common": "*",
     "esbuild": "^0.17.12",
     "express": "^4.18.2",
-    "preact": "^10.13.1"
+    "jest": "^29.5.0",
+    "preact": "^10.13.1",
+    "query-string": "^8.1.0"
+  },
+  "devDependencies": {
+    "esbuild-jest": "^0.5.0"
   }
 }
