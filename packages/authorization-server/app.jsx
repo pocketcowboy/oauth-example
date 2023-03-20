@@ -1,11 +1,18 @@
 import { Fragment, render } from "preact";
+import { useState } from "preact/hooks";
 
-import { AuthenticatedUserBadge, AuthorizationForm, Header } from "common";
+import {
+  AuthenticatedUserBadge,
+  AuthorizationForm,
+  Header,
+  LoginForm,
+  UnknownUserBadge,
+} from "common";
 import { extractQueryParams } from "./helpers";
 
 const AuthorizationNotice = () => (
   <AuthorizationForm
-    endpoint="/grant-authorization"
+    endpoint="/approve"
     request={extractQueryParams(window.location)}
   >
     <fieldset>
@@ -30,16 +37,22 @@ const AuthorizationNotice = () => (
   </AuthorizationForm>
 );
 
-const App = () => (
-  <Fragment>
-    <Header title="Authorization Server" />
-    {/* <UnknownUserBadge /> */}
-    <AuthenticatedUserBadge />
-    <main>
-      {/* <LoginForm /> */}
-      <AuthorizationNotice />
-    </main>
-  </Fragment>
-);
+const App = () => {
+  [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  return (
+    <Fragment>
+      <Header title="Authorization Server" />
+      {isAuthenticated ? <AuthenticatedUserBadge /> : <UnknownUserBadge />}
+      <main>
+        {isAuthenticated ? (
+          <AuthorizationNotice />
+        ) : (
+          <LoginForm onSubmit={() => setIsAuthenticated(true)} />
+        )}
+      </main>
+    </Fragment>
+  );
+};
 
 render(<App />, document.body);

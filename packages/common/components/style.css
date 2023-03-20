@@ -103,7 +103,8 @@ form {
   flex-direction: column;
 }
 
-form input[type="text"] {
+form input[type="text"],
+form input[type="password"] {
   margin: 0.5rem 0;
   padding: 0.5rem;
   border: 1px solid #d1d1d1;

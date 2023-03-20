@@ -6,7 +6,8 @@
   "scripts": {
     "clean": "ultra -r clean",
     "build": "ultra -r build",
-    "start": "ultra -r start"
+    "start": "ultra -r start",
+    "test": "ultra -r test"
   },
   "name": "oauth-example",
   "devDependencies": {
